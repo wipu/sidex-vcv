@@ -24,7 +24,7 @@ Then just clone this repository and run
 
     ./run-in-developer-rack.sh
 
-The script will download (if needed) the modified Rack, compile it together with SidEx and run it.
+The script will download (if needed) the modified Rack, compile it together with SidEx and run it. Ah, did I mention all this requires Linux?
 
 Then just create an instance of SidEx, connect some signals to relevant inputs (e.g. osc1 gate >=5, some freq, wf=.4, sustain=10) and select the MIDI input of your Commodore 64.
 
