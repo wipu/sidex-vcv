@@ -26,7 +26,7 @@ Then just clone this repository and run
 
 The script will download (if needed) the modified Rack, compile it together with SidEx and run it. Ah, did I mention all this requires Linux?
 
-Then just create an instance of SidEx, connect some signals to relevant inputs (e.g. osc1 gate >=5, some freq, wf=.4, sustain=10) and select the MIDI input of your Commodore 64.
+Then just create an instance of SidEx, connect some signals to relevant inputs (e.g. osc1 gate >=5, some freq, wf=.4 (PULSE=4 divided by 10 to keep it within VCV voltage limits), sustain=10) and select the MIDI input of your Commodore 64.
 
 ## Why
 
