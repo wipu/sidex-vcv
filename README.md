@@ -16,6 +16,8 @@ SidEx is a simple CV to MIDI converter module that lets you drive your Commodore
 
 Funnily enough, the standard MIDI speed is just enough to send all SID register values as sysex dumps 50 times per second (a typical refresh rate of a SID engine running in a PAL Commodore 64). So, SidEx simply saves CV values it receives, and 50 times per second it converts them into SID register values and sends them as a sysex dump.
 
+Naturally you'll need the receiving counterpart running on your Commodore 64: [sidex-0.1.prg](https://github.com/wipu/mockodore/releases/download/sidex-0.1/sidex-0.1.prg)
+
 ## Why
 
 Well, why would you **not** want to play SID with your modular?
