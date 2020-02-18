@@ -20,7 +20,7 @@ Naturally you'll need the receiving counterpart running on your Commodore 64: [s
 
 (The prg assumes the MIDI interface is Datel compatible. It has been tested with C-Lab, but e.g. Kerberos should also work. Other devices will be supported in the future.)
 
-Then just clone this and run
+Then just clone this repository and run
 
     ./run-in-developer-rack.sh
 
