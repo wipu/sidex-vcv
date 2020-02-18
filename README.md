@@ -6,7 +6,7 @@ VCV Rack plugin for CV-controlling Commodore 64 SID via MIDI
 Before you try this, you need to be aware that
 
 1. This module sends MIDI SysEx messages using the _Casio_ manufacturer ID (because the author doesn't own any Casio devices). If a real Casio instrument receives the messages, the results are undefined and **may harm your instrument or your data**. If you have a Casio instrument connected, you shouldn't use this module. In the future there will be a way to use a different manufacturer ID.
-2. This module requires a patched version of VCV Rack, because the official version doesn't support MIDI messages of length > 3 bytes as of this writing. If you feel you need to use this in your official Rack right now, please contact Andrew Bell.
+2. This module requires a [patched version of VCV Rack](https://github.com/wipu/Rack/tree/sysex-send), because the official version doesn't support MIDI messages of length > 3 bytes as of this writing. If you feel you need to use this in your official Rack right now, please contact Andrew Bell.
 
 ## What
 
