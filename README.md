@@ -33,3 +33,13 @@ Then just create an instance of SidEx, connect some signals to relevant inputs (
 Well, why would you **not** want to play SID with your modular?
 
 Even as is, SidEx is a fun way to play the SID. But in the future there will be auxiliary modules that let you control the SID on a higher level, controlling SidEx from higher level concepts.
+
+## Help
+
+Do you know how to implement the look'n'feel of C64 as a simple SVG required for a VCV plugin panel? If you do, your help will be appreciated.
+
+How would you like to control your SID from VCV? Please tell so we can create modules that make it easier to generate CV to SidEx.
+
+How can other modules send SID-related messages locked to 50 Hz frames? This would be useful for stereotypical SID tricks like "wavetable synthesis" and arpeggios - changing the waveform or pitch on every frame.
+
+What else? Feel free to contribute with questions, ideas, patches, critique, ...
