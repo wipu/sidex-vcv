@@ -1,0 +1,27 @@
+{
+  "slug": "SidEx",
+  "name": "SidEx",
+  "version": "1.0.0",
+  "license": "MIT",
+  "brand": "SidEx",
+  "author": "Ville Oikarinen",
+  "authorEmail": "ville@oikarinen.org",
+  "authorUrl": "http://blog.ville.oikarinen.org",
+  "pluginUrl": "https://github.com/wipu/sidex-vcv",
+  "manualUrl": "",
+  "sourceUrl": "https://github.com/wipu/sidex-vcv",
+  "donateUrl": "",
+  "changelogUrl": "",
+  "modules": [
+    {
+      "slug": "SidEx",
+      "name": "SidEx",
+      "description": "Commodore 64 SID Controller via MIDI",
+      "tags": [
+        "Controller",
+        "External",
+        "MIDI"
+      ]
+    }
+  ]
+}
