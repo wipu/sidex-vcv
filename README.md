@@ -18,6 +18,8 @@ Funnily enough, the standard MIDI speed is just enough to send all SID register 
 
 Naturally you'll need the receiving counterpart running on your Commodore 64: [sidex-0.1.prg](https://github.com/wipu/mockodore/releases/download/sidex-0.1/sidex-0.1.prg)
 
+(The prg assumes the MIDI interface is Datel compatible. It has been tested with C-Lab, but e.g. Kerberos should also work. Other devices will be supported in the future.)
+
 Then just clone this and run
 
     ./run-in-developer-rack.sh
