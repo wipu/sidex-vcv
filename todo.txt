@@ -1,0 +1,42 @@
+- video
+  - quickly read some tutorial, what typical mistakes to avoid
+  * script:
+    * "title screenshot" with text and C64
+    * face: "welcome"
+    * phone: C64, sound on
+    * phone: follow midi cable to pc "sound coming from..."
+    * screen: "here"
+    * face: "let's demo"
+    * screen: modify inputs
+    * face: "so, very low level, ideas welcome for other modules that"
+            "produce signals to this from 'higher level' concepts"
+	    "For example ripped register dumps (which I have done)"
+    * face: "this for user, now I'll show some details of how it works"
+    * screen: connect to midiprinter, on same screen
+              slow down clock
+	      demo e.g. adsr
+    * face: "thanks for watching, ideas welcome, panel design, ..."
+            "link to github in the notes"
+
+- minimal sane correct sysex dump
+  + correct dump length
+  + defaults in dump
+    + volume up
+    + o1 adsr 12C2 (or something where you hear nontrivial envelope)
+  + freq offset+cv to freq
+  - cross-verify dump content with java-code
+
+- why does real test with 8vert give weird waveforms values?
+  * logging shows that I'm probably converting wrong
+  * but the same values in test work
+
+- test out of bounds with float->nybble
+  - volume, wf
+
+- separate gate for chan 3 off? If yes, allow only filtermode bits
+  to be set by filter mode float
+
+- handle a full register at a time: no risk of handling parts in
+  broken order
+
+- freq: correct v/oct, calibrated to sid range
