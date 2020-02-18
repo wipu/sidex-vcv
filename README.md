@@ -10,7 +10,7 @@ Before you try this, you need to be aware that
 
 ## What
 
-SidEx is a simple CV to MIDI converter module that lets you drive your Commodore 64 SID chip (or an emulation of one) with control voltages from VCV Rack. And, if you use something like Expert Sleepers ES-8, the control voltages can even originate from a real Eurorack synthesizer, _making your Commodore 64 essentially an Eurorack module!_
+SidEx is a simple CV to MIDI converter module that lets you drive your Commodore 64 SID chip (or an emulation of one) with control voltages from VCV Rack. And, if you use something like Expert Sleepers ES-8, the control voltages can even originate from a real Eurorack synthesizer, _making your Commodore 64 essentially a Eurorack module!_
 
 ## How
 
