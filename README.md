@@ -18,6 +18,14 @@ Funnily enough, the standard MIDI speed is just enough to send all SID register 
 
 Naturally you'll need the receiving counterpart running on your Commodore 64: [sidex-0.1.prg](https://github.com/wipu/mockodore/releases/download/sidex-0.1/sidex-0.1.prg)
 
+Then just clone this and run
+
+    ./run-in-developer-rack.sh
+
+The script will download (if needed) the modified Rack, compile it together with SidEx and run it.
+
+Then just create an instance of SidEx, connect some signals to relevant inputs (e.g. osc1 gate >=5, some freq, wf=.4, sustain=10) and select the MIDI input of your Commodore 64.
+
 ## Why
 
 Well, why would you **not** want to play SID with your modular?
