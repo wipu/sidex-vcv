@@ -45,6 +45,7 @@ Some interesting sounds can already be made. These are the most important known 
 * hardcoded Datel MIDI assumption
 * hardcoded Manufacturer ID (Casio)
 * no save/restore support so you need to repatch after restarting Rack
+* this page is all the documentation there is
 
 ## Help
 
