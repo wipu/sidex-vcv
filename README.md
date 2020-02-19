@@ -42,6 +42,8 @@ Some interesting sounds can already be made. These are the most important known 
 * pulse width, ring mod, osc sync input handling is not implemented quite yet
 * waveform selection is clumsy: the input value must be the raw nybble divided by 10 (to keep the maximum value 15 within voltage limits, under 10). For example pulse waveform is selected with the value 0.4.
 * graphical design of the panel may not please every eye...
+* hardcoded Datel MIDI assumption
+* hardcoded Manufacturer ID (Casio)
 
 ## Help
 
