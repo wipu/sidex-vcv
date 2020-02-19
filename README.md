@@ -39,7 +39,7 @@ Even as is, SidEx is a fun way to play the SID. But in the future there will be 
 Some interesting sounds can already be made. These are the most important known limitations:
 
 * some input ranges are not checked, resulting in odd behaviour beyound limits
-* pulse width, ring mod, osc sync input handling is not implemented
+* pulse width, ring mod, osc sync input handling is not implemented quite yet
 * waveform selection is clumsy: the input value must be the raw nybble divided by 10 (to keep the maximum value 15 within voltage limits, under 10). For example pulse waveform is selected with the value 0.4.
 * graphical design of the panel may not please every eye...
 
