@@ -119,6 +119,10 @@ struct SidEx : Module {
       conv.wf2 = inputs[WF2_INPUT].getVoltage();
       conv.wf3 = inputs[WF3_INPUT].getVoltage();
 
+      conv.pw1 = inputs[PW1_INPUT].getVoltage();
+      conv.pw2 = inputs[PW2_INPUT].getVoltage();
+      conv.pw3 = inputs[PW3_INPUT].getVoltage();
+
       conv.cutoff = inputs[FILTER_CUTOFF_INPUT].getVoltage();
       conv.reso = inputs[FILTER_RESO_INPUT].getVoltage();
       conv.filt1 = inputs[FILTER_ENABLE1_INPUT].getVoltage();

@@ -2,6 +2,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.hpp>
 #include "sysexconverter.hpp"
 
 void convertAndDump(SidExConverter *conv) {
@@ -144,6 +145,18 @@ void handleCommand(char* name, double value, SidExConverter *conv) {
   }
   if(strcmp("master_volume\n", name) == 0) {
     conv->master_volume = value;
+    return;
+  }
+  if(strcmp("pw1\n", name) == 0) {
+    conv->pw1 = value;
+    return;
+  }
+  if(strcmp("pw2\n", name) == 0) {
+    conv->pw2 = value;
+    return;
+  }
+  if(strcmp("pw3\n", name) == 0) {
+    conv->pw3 = value;
     return;
   }
   fprintf(stderr, "Unsupported command: %s\n", name);

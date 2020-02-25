@@ -5,6 +5,12 @@ set -euo pipefail
 HERE=$(dirname "$0")
 HERE=$(readlink -f "$HERE")
 
+. "$HERE"/../../functions.sh
+
+log() {
+    echo "$@" >&2
+}
+
 TMP=/tmp/sidex-test
 rm -rf "$TMP"
 mkdir -p "$TMP"
@@ -14,11 +20,9 @@ COMMANDS="$TMP"/commands
 ACTUAL_OUT="$TMP"/actual-out
 mkdir -p "$ACTUAL_OUT"
 
-gcc -o "$TESTER" -I"$HERE"/../src "$HERE"/convertertester.cpp
-
-log() {
-    echo "$@" >&2
-}
+log Compiling
+c++  -std=c++11 -o "$TESTER" -I"$HERE"/../src -I"$RACK"/include -I"$RACK"/dep/include "$HERE"/convertertester.cpp
+log Compiled
 
 test-start() {
     TESTNAME=$1
@@ -253,6 +257,48 @@ cmd filt1 0
 cmd filt2 0
 cmd filt3 0
 cmd filtExt 5
+step
+test-end
+
+test-start pw1
+comment -6
+cmd pw1 -6
+step
+comment -5
+cmd pw1 -5
+step
+comment -4.9
+cmd pw1 -4.9
+step
+comment -1
+cmd pw1 -1
+step
+comment 0
+cmd pw1 0
+step
+comment 1
+cmd pw1 1
+step
+comment 6
+cmd pw1 6
+step
+test-end
+
+test-start pw2
+comment -5
+cmd pw2 -5
+step
+comment 6
+cmd pw2 6
+step
+test-end
+
+test-start pw3
+comment -5
+cmd pw3 -5
+step
+comment 6
+cmd pw3 6
 step
 test-end
 

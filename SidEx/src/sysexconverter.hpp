@@ -74,6 +74,10 @@ struct SidExConverter {
   float wf2 = 0.0;
   float wf3 = 0.0;
 
+  float pw1 = 0.0;
+  float pw2 = 0.0;
+  float pw3 = 0.0;
+
   float cutoff = 0.0;
   float filt1 = 0.0;
   float filt2 = 0.0;
@@ -152,6 +156,17 @@ struct SidExConverter {
     sid[cr] = regValue;
   }
 
+  void update_pw(SidRegister hiReg, SidRegister loReg, float input) {
+    float clamped = rack::math::clamp(input, -5.0, 5.0);
+    float as0to10 = clamped + 5.0;
+    float as0to1 = as0to10 / 10.0;
+    int value = as0to1 * 4095.0;
+    uint8_t high = (value >> 8) & 0x0F;
+    uint8_t low = value & 0xFF;
+    sid[hiReg] = high;
+    sid[loReg] = low;
+  }
+
   void update_cutoff() {
     float f = cutoff;
     if(f < 0 ) f = 0;
@@ -203,6 +218,10 @@ struct SidExConverter {
     update_wf(CR1, wf1);
     update_wf(CR2, wf2);
     update_wf(CR3, wf3);
+
+    update_pw(PwHi1, PwLo1, pw1);
+    update_pw(PwHi2, PwLo2, pw2);
+    update_pw(PwHi3, PwLo3, pw3);
 
     update_cutoff();
     update_resfilt();
