@@ -103,16 +103,52 @@ void handleCommand(char* name, double value, SidExConverter *conv) {
     conv->r3 = value;
     return;
   }
-  if(strcmp("wf1\n", name) == 0) {
-    conv->wf1 = value;
+  if(strcmp("wf_tri_1\n", name) == 0) {
+    conv->wf_tri_1 = value;
     return;
   }
-  if(strcmp("wf2\n", name) == 0) {
-    conv->wf2 = value;
+  if(strcmp("wf_saw_1\n", name) == 0) {
+    conv->wf_saw_1 = value;
     return;
   }
-  if(strcmp("wf3\n", name) == 0) {
-    conv->wf3 = value;
+  if(strcmp("wf_pul_1\n", name) == 0) {
+    conv->wf_pul_1 = value;
+    return;
+  }
+  if(strcmp("wf_noi_1\n", name) == 0) {
+    conv->wf_noi_1 = value;
+    return;
+  }
+  if(strcmp("wf_tri_2\n", name) == 0) {
+    conv->wf_tri_2 = value;
+    return;
+  }
+  if(strcmp("wf_saw_2\n", name) == 0) {
+    conv->wf_saw_2 = value;
+    return;
+  }
+  if(strcmp("wf_pul_2\n", name) == 0) {
+    conv->wf_pul_2 = value;
+    return;
+  }
+  if(strcmp("wf_noi_2\n", name) == 0) {
+    conv->wf_noi_2 = value;
+    return;
+  }
+  if(strcmp("wf_tri_3\n", name) == 0) {
+    conv->wf_tri_3 = value;
+    return;
+  }
+  if(strcmp("wf_saw_3\n", name) == 0) {
+    conv->wf_saw_3 = value;
+    return;
+  }
+  if(strcmp("wf_pul_3\n", name) == 0) {
+    conv->wf_pul_3 = value;
+    return;
+  }
+  if(strcmp("wf_noi_3\n", name) == 0) {
+    conv->wf_noi_3 = value;
     return;
   }
   if(strcmp("cutoff\n", name) == 0) {

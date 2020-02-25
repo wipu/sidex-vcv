@@ -173,33 +173,56 @@ step
 test-end
 
 test-start wf1
-comment .1
-cmd wf1 .1
+comment tri on
+cmd wf_tri_1 5
 step
-comment .2
-cmd wf1 .2
+comment +saw on
+cmd wf_saw_1 5
 step
-comment .3
-cmd wf1 .3
+comment +pul on
+cmd wf_pul_1 5
 step
-comment 1.5
-cmd wf1 1.5
+comment +noi on
+cmd wf_noi_1 5
 step
-comment ".3 when gate on"
+comment +gate on
 cmd gate1 5
-cmd wf1 .3
 step
 test-end
 
 test-start wf2
-comment .1
-cmd wf2 .1
+comment tri on
+cmd wf_tri_2 5
+step
+comment +saw on
+cmd wf_saw_2 5
+step
+comment +pul on
+cmd wf_pul_2 5
+step
+comment +noi on
+cmd wf_noi_2 5
+step
+comment +gate on
+cmd gate2 5
 step
 test-end
 
 test-start wf3
-comment .1
-cmd wf3 .1
+comment tri on
+cmd wf_tri_3 5
+step
+comment +saw on
+cmd wf_saw_3 5
+step
+comment +pul on
+cmd wf_pul_3 5
+step
+comment +noi on
+cmd wf_noi_3 5
+step
+comment +gate on
+cmd gate3 5
 step
 test-end
 

@@ -70,9 +70,18 @@ struct SidExConverter {
   float s3 = 0.0;
   float r3 = 0.0;
 
-  float wf1 = 0.0;
-  float wf2 = 0.0;
-  float wf3 = 0.0;
+  float wf_tri_1 = 0.0;
+  float wf_saw_1 = 0.0;
+  float wf_pul_1 = 0.0;
+  float wf_noi_1 = 0.0;
+  float wf_tri_2 = 0.0;
+  float wf_saw_2 = 0.0;
+  float wf_pul_2 = 0.0;
+  float wf_noi_2 = 0.0;
+  float wf_tri_3 = 0.0;
+  float wf_saw_3 = 0.0;
+  float wf_pul_3 = 0.0;
+  float wf_noi_3 = 0.0;
 
   float pw1 = 0.0;
   float pw2 = 0.0;
@@ -149,13 +158,6 @@ struct SidExConverter {
     return n & 0x0F;
   }
 
-  void update_wf(SidRegister cr, float input) {
-    uint8_t value = input * 10.0;
-    value = value & 0x0F;
-    uint8_t regValue = (value << 4) | (sid[cr] & 0x0F);
-    sid[cr] = regValue;
-  }
-
   void update_pw(SidRegister hiReg, SidRegister loReg, float input) {
     float clamped = rack::math::clamp(input, -5.0, 5.0);
     float as0to10 = clamped + 5.0;
@@ -197,9 +199,24 @@ struct SidExConverter {
   }
   
   void convert() {
+    // TODO optimize and handle a whole CR reg at once
     update_bit(CR1, gate1, 0x01);
+    update_bit(CR1, wf_tri_1, 0x10);
+    update_bit(CR1, wf_saw_1, 0x20);
+    update_bit(CR1, wf_pul_1, 0x40);
+    update_bit(CR1, wf_noi_1, 0x80);
+
     update_bit(CR2, gate2, 0x01);
+    update_bit(CR2, wf_tri_2, 0x10);
+    update_bit(CR2, wf_saw_2, 0x20);
+    update_bit(CR2, wf_pul_2, 0x40);
+    update_bit(CR2, wf_noi_2, 0x80);
+
     update_bit(CR3, gate3, 0x01);
+    update_bit(CR3, wf_tri_3, 0x10);
+    update_bit(CR3, wf_saw_3, 0x20);
+    update_bit(CR3, wf_pul_3, 0x40);
+    update_bit(CR3, wf_noi_3, 0x80);
 
     update_adsr(AD1, SR1, a1, d1, s1, r1);
     update_adsr(AD2, SR2, a2, d2, s2, r2);
@@ -214,10 +231,6 @@ struct SidExConverter {
     int freq3_i = freqInt(freq3);
     sid[FreqHi3] = msb(freq3_i);
     sid[FreqLo3] = lsb(freq3_i);
-
-    update_wf(CR1, wf1);
-    update_wf(CR2, wf2);
-    update_wf(CR3, wf3);
 
     update_pw(PwHi1, PwLo1, pw1);
     update_pw(PwHi2, PwLo2, pw2);

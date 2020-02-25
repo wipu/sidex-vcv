@@ -27,9 +27,18 @@ struct SidEx : Module {
 		 FREQ1_INPUT,
 		 FREQ2_INPUT,
 		 FREQ3_INPUT,
-		 WF1_INPUT,
-		 WF2_INPUT,
-		 WF3_INPUT,
+		 WF_TRI_1_INPUT,
+		 WF_SAW_1_INPUT,
+		 WF_PUL_1_INPUT,
+		 WF_NOI_1_INPUT,
+		 WF_TRI_2_INPUT,
+		 WF_SAW_2_INPUT,
+		 WF_PUL_2_INPUT,
+		 WF_NOI_2_INPUT,
+		 WF_TRI_3_INPUT,
+		 WF_SAW_3_INPUT,
+		 WF_PUL_3_INPUT,
+		 WF_NOI_3_INPUT,
 		 PW1_INPUT,
 		 PW2_INPUT,
 		 PW3_INPUT,
@@ -115,9 +124,18 @@ struct SidEx : Module {
       conv.s3 = inputs[S3_INPUT].getVoltage();
       conv.r3 = inputs[R3_INPUT].getVoltage();
 
-      conv.wf1 = inputs[WF1_INPUT].getVoltage();
-      conv.wf2 = inputs[WF2_INPUT].getVoltage();
-      conv.wf3 = inputs[WF3_INPUT].getVoltage();
+      conv.wf_tri_1 = inputs[WF_TRI_1_INPUT].getVoltage();
+      conv.wf_saw_1 = inputs[WF_SAW_1_INPUT].getVoltage();
+      conv.wf_pul_1 = inputs[WF_PUL_1_INPUT].getVoltage();
+      conv.wf_noi_1 = inputs[WF_NOI_1_INPUT].getVoltage();
+      conv.wf_tri_2 = inputs[WF_TRI_2_INPUT].getVoltage();
+      conv.wf_saw_2 = inputs[WF_SAW_2_INPUT].getVoltage();
+      conv.wf_pul_2 = inputs[WF_PUL_2_INPUT].getVoltage();
+      conv.wf_noi_2 = inputs[WF_NOI_2_INPUT].getVoltage();
+      conv.wf_tri_3 = inputs[WF_TRI_3_INPUT].getVoltage();
+      conv.wf_saw_3 = inputs[WF_SAW_3_INPUT].getVoltage();
+      conv.wf_pul_3 = inputs[WF_PUL_3_INPUT].getVoltage();
+      conv.wf_noi_3 = inputs[WF_NOI_3_INPUT].getVoltage();
 
       conv.pw1 = inputs[PW1_INPUT].getVoltage();
       conv.pw2 = inputs[PW2_INPUT].getVoltage();
@@ -153,9 +171,9 @@ struct SidExWidget : ModuleWidget {
     addChild(createWidget<ScrewSilver>(Vec(RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
     addChild(createWidget<ScrewSilver>(Vec(box.size.x - 2 * RACK_GRID_WIDTH, RACK_GRID_HEIGHT - RACK_GRID_WIDTH)));
     
-    float oVert = 15.0;
+    float oVert = 16.0;
     float oHoriz = 18.15;
-    float oy1 = 93.0;
+    float oy1 = 90.0;
     float oy2 = oy1 + oVert;
     float oy3 = oy2 + oVert;
     float ox = 15.0;
@@ -169,10 +187,23 @@ struct SidExWidget : ModuleWidget {
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy2)), module, SidEx::FREQ2_INPUT));
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy3)), module, SidEx::FREQ3_INPUT));
     ox += oHoriz;
+
+    float wf_sep = 4.0;
     
-    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy1)), module, SidEx::WF1_INPUT));
-    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy2)), module, SidEx::WF2_INPUT));
-    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy3)), module, SidEx::WF3_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox-wf_sep, oy1-wf_sep)), module, SidEx::WF_TRI_1_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox+wf_sep, oy1-wf_sep)), module, SidEx::WF_SAW_1_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox-wf_sep, oy1+wf_sep)), module, SidEx::WF_PUL_1_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox+wf_sep, oy1+wf_sep)), module, SidEx::WF_NOI_1_INPUT));
+
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox-wf_sep, oy2-wf_sep)), module, SidEx::WF_TRI_2_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox+wf_sep, oy2-wf_sep)), module, SidEx::WF_SAW_2_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox-wf_sep, oy2+wf_sep)), module, SidEx::WF_PUL_2_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox+wf_sep, oy2+wf_sep)), module, SidEx::WF_NOI_2_INPUT));
+
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox-wf_sep, oy3-wf_sep)), module, SidEx::WF_TRI_3_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox+wf_sep, oy3-wf_sep)), module, SidEx::WF_SAW_3_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox-wf_sep, oy3+wf_sep)), module, SidEx::WF_PUL_3_INPUT));
+    addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox+wf_sep, oy3+wf_sep)), module, SidEx::WF_NOI_3_INPUT));
     ox += oHoriz;
     
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy1)), module, SidEx::PW1_INPUT));
@@ -214,7 +245,7 @@ struct SidExWidget : ModuleWidget {
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy2)), module, SidEx::FILTER_ENABLE2_INPUT));
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, oy3)), module, SidEx::FILTER_ENABLE3_INPUT));
 
-    float y = oy1 - oVert * 2;
+    float y = oy1 - oVert * 1.5;
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, y)), module, SidEx::FILTER_ENABLE_EXT_INPUT));
     y -= oVert;
     addInput(createInputCentered<PJ301MPort>(mm2px(Vec(ox, y)), module, SidEx::FILTER_TYPE_INPUT));
