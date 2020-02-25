@@ -44,7 +44,7 @@ Some interesting sounds can already be made. These are the most important known 
 * graphical design of the panel may not please every eye...
 * hardcoded Datel MIDI assumption
 * hardcoded Manufacturer ID (Casio)
-* no save/restore support so you need to repatch after restarting Rack
+* no save/restore support so you need to reselect MIDI out after restarting Rack
 * this page is all the documentation there is
 
 ## Help
